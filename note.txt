@@ -1,0 +1,18 @@
+answer_dataset = pd.read_csv("public_test_with_labels.csv")
+input_dataset = pd.read_csv("public_test.csv")
+
+features = ['DailyRate','Education','DistanceFromHome']
+target = ['Attrition']
+X = input_dataset[features]
+y = answer_dataset[target]
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
+
+# model = KNeighborsClassifier(n_neighbors=5, metric='euclidean')
+# model.fit(X_train, y_train)
+
+model = LogisticRegression()
+model.fit(x, y)
+
+X_test = 
